@@ -44,4 +44,9 @@ class config{
     public function get_db_database(){
         return $this->db_database;
     }
+    
+    function passwordToHash($password){
+        $salt = "";
+        return md5($password . $salt);
+    }
 }

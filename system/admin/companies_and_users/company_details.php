@@ -49,7 +49,7 @@ $company = $companies->getCompany($_GET['id']);
                 Employees
             </div>
             <div class="card-block">
-                <a href="#" class="btn btn-primary">Add new employee</a>
+                <a href="<?php echo $config->url; ?>system/admin/companies_and_users/add_user.php?company=<?php echo $company['cp_companies_id']; ?>" class="btn btn-primary">Add new employee</a>
             </div>
         </div>
     </div>

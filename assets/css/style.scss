@@ -1,0 +1,19 @@
+@import 'font-awesome.min.css';
+
+body{
+  margin-top: 70px;
+}
+h1{
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+h2{
+  font-size: 15px;
+}
+.navbar-nav, .navbar-inverse, .nav-link{
+  color: #fff !important;
+  
+  .active{
+    background-color: #2d759c;
+  }
+}

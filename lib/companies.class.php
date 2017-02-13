@@ -87,4 +87,42 @@ class companies{
         
         return $count['count'];
     }
+    
+    //get all users from company
+    function getUsersByCompany($company_id){
+        $company_id = $this->config->conn->escape($company_id);
+        
+        $results = $this->config->conn->rawQuery("
+            SELECT
+                `cp_users_id`,
+                `cp_users_firstname`,
+                `cp_users_lastname`,
+                `cp_users_email`
+            FROM
+                `cp_users`
+            WHERE
+                `cp_companies_cp_companies_id` = '".$company_id."'
+        ");
+        
+        return $results;
+    }
+    
+    function getUser($user_id){
+        $user_id = $this->config->conn->escape($user_id);
+        
+        $results = $this->config->conn->rawQueryOne("
+            SELECT
+                `cp_users_id`,
+                `cp_users_firstname`,
+                `cp_users_lastname`,
+                `cp_users_email`,
+                `cp_companies_cp_companies_id`
+            FROM
+                `cp_users`
+            WHERE
+                `cp_users_id` = '".$user_id."'
+        ");
+        
+        return $results;
+    }
 }

@@ -49,6 +49,22 @@ $company = $companies->getCompany($_GET['id']);
                 Employees
             </div>
             <div class="card-block">
+                <table class="table">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                <?php
+                foreach($companies->getUsersByCompany($_GET['id']) as $user){
+                    ?>
+                    <tr class='clickable-row' data-href='<?php echo $config->url; ?>system/admin/companies_and_users/user_details.php?id=<?php echo $user['cp_users_id']; ?>'>
+                        <td><?php echo $user['cp_users_firstname']; ?></td>
+                        <td><?php echo $user['cp_users_lastname']; ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+                </table>
                 <a href="<?php echo $config->url; ?>system/admin/companies_and_users/add_user.php?company=<?php echo $company['cp_companies_id']; ?>" class="btn btn-primary">Add new employee</a>
             </div>
         </div>

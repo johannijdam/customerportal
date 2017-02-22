@@ -12,6 +12,7 @@ include_once $root . 'lib/usersession.class.php';
 //load connection
 $usersession = new usersession();
 $config = new config();
+$active = (empty($active) ? "" : $active )
 ?>
 <!doctype html>
 

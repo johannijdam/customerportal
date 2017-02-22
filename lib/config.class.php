@@ -46,7 +46,7 @@ class config{
     }
     
     function passwordToHash($password){
-        $salt = "";
+        $salt = "!?weblust!?";
         return md5($password . $salt);
     }
 }
